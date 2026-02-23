@@ -10,6 +10,9 @@ async function main() {
         ],
     });
 
+    // Option to await the entire response as a single message
+    // const finalMessage = await stream.result();
+
     for await (const event of stream) {
         switch (event.type) {
             case "text_delta":
