@@ -13,12 +13,14 @@ async function main() {
 
     // response is an AssistantMessage
     for (const block of response.content) {
+        // `text`, `thinking`, or `toolCall` 
         if (block.type === "text") {
             console.log(block.text);
         }
     }
 
     console.log(`\nTokens: ${response.usage.totalTokens}`);
+    // stopReason is "stop", "toolUse", "length", "error", "aborted"
     console.log(`Stop reason: ${response.stopReason}`);
 }
 
