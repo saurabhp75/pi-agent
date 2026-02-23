@@ -2,7 +2,7 @@ import { getModel, completeSimple } from "@mariozechner/pi-ai";
 
 async function main() {
     // const model = getModel("anthropic", "claude-opus-4-5");
-    const model = getModel("google", "gemini-2.0-flash");
+    const model = getModel("google", "gemini-2.5-flash");
 
     const response = await completeSimple(model, {
         systemPrompt: "You are a helpful assistant.",
