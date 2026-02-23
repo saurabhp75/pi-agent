@@ -71,3 +71,36 @@ tool_execution_end
 //             break;
 //     }
 // });
+
+
+/* 
+
+// steering and follow-ups 
+
+// Interrupt: delivered after the current tool finishes.
+// Remaining pending tools are skipped.
+agent.steer({
+  role: "user",
+  content: "Actually, skip that and read tsconfig.json instead.",
+  timestamp: Date.now(),
+});
+
+// Follow-up: queued for after the agent finishes naturally.
+// Doesn't interrupt current work.
+agent.followUp({
+  role: "user",
+  content: "Now summarize what you found.",
+  timestamp: Date.now(),
+});
+
+
+// state managment: you can change the agent's state 
+// during execution. See below for examples
+
+agent.setModel(getModel("openai", "gpt-4o"));  // Switch providers mid-session
+agent.setThinkingLevel("high");                // Enable extended thinking
+agent.setSystemPrompt("New instructions.");    // Update the system prompt
+agent.setTools([...newTools]);                 // Swap the tool set
+agent.replaceMessages(trimmedMessages);        // Replace conversation history
+
+*/
